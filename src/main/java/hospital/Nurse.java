@@ -1,18 +1,19 @@
 package hospital;
 
-public class Doctor {
+public class Nurse {
+
     private String employeeNumber;
     private String name;
-    private String specialty;
+    private int numberOfPatients;
 
-    public Doctor(String employeeNumber, String name, String specialty) {
+    public Nurse(String employeeNumber, String name, int numberOfPatients) {
         this.employeeNumber = employeeNumber;
         this.name = name;
-        this.specialty = specialty;
+        this.numberOfPatients = numberOfPatients;
     }
 
     public void careForPatient(Patient sickPatient) {
-        sickPatient.increaseHealthLevel(10);
+        sickPatient.increaseHealthLevel(5);
     }
 
     public void drawBlood(Patient sickPatient) {
@@ -20,7 +21,6 @@ public class Doctor {
     }
 
     public int calculatePay() {
-        return 90000;
+        return 50000;
     }
 }
-
