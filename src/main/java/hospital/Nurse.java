@@ -1,25 +1,25 @@
 package hospital;
 
-public class Nurse {
+public class Nurse extends HospitalEmployee implements MedicalDuties {
 
-    private String employeeNumber;
-    private String name;
     private int numberOfPatients;
 
     public Nurse(String employeeNumber, String name, int numberOfPatients) {
-        this.employeeNumber = employeeNumber;
-        this.name = name;
+        super(employeeNumber, name);
         this.numberOfPatients = numberOfPatients;
     }
 
+    @Override
     public void careForPatient(Patient sickPatient) {
         sickPatient.increaseHealthLevel(5);
     }
 
+    @Override
     public void drawBlood(Patient sickPatient) {
         sickPatient.decreaseBloodLevel(5);
     }
 
+    @Override
     public int calculatePay() {
         return 50000;
     }
